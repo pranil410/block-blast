@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Block Blast Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Block Blast</h1>
+  <p id="instructions" style="font-size: 1.2em; margin-bottom: 10px;">
+  Drag the colored shapes onto the grid to place blocks. Fill full rows or columns to clear them!
+</p>
+  <div id="score">Score: 0</div>
+
+  <div id="grid"></div>
+
+  <div id="pieces"></div>
+
+  <button id="undoBtn">Undo</button>
+
+  <!-- Game Over overlay -->
+  <div id="gameOver" style="
+    display:none; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background: rgba(0,0,0,0.7); 
+    color: white; 
+    font-size: 3em; 
+    text-align: center; 
+    padding-top: 20vh;
+    z-index: 9999;
+  ">
+    Game Over<br />
+    <button id="restartBtn" style="
+      margin-top: 30px; 
+      font-size: 0.5em; 
+      padding: 10px 20px; 
+      cursor: pointer;
+    ">Restart</button>
+  </div>
+
+  <!-- Blast sound effect (replace blast.mp3 with your sound file) -->
+  <audio id="blastSound" src="blast.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

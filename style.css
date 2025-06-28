@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background: #f0f0f0;
+}
+
+#grid {
+  margin: 20px auto;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+  background: #333;
+  border-radius: 8px;
+  touch-action: none;
+  position: relative;
+}
+
+.cell {
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cell.block {
+  background: var(--color, #2196f3);
+  box-shadow: 0 0 8px var(--color, #2196f3);
+}
+
+#pieces {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px auto 30px;
+  width: fit-content;
+  user-select: none;
+}
+
+.piece {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  grid-template-rows: repeat(3, 30px);
+  gap: 2px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background: transparent;
+}
+
+.piece .cell {
+  width: 30px;
+  height: 30px;
+  background: #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.piece .cell.block {
+  background: var(--color);
+  box-shadow: 0 0 6px var(--color);
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1976d2;
+}
+
+.blast {
+  animation: blastAnimation 0.4s ease forwards;
+  box-shadow: 0 0 15px 5px yellow !important;
+}
+
+@keyframes blastAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 15px 5px yellow;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
